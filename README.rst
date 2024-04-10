@@ -29,7 +29,7 @@ Example
 
 .. code:: python
 
-   from voicevox import Client
+   from vvclient import Client
    import asyncio
 
 
