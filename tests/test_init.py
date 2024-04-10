@@ -1,6 +1,6 @@
 import pytest
 
-from voicevox import Client
+from vvclient import Client
 
 
 @pytest.mark.asyncio
