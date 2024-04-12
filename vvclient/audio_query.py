@@ -24,4 +24,4 @@ class AudioQuery:
         }
         if core_version:
             params["core_version"] = core_version
-        return await self._http.create_audio_query(params, self.data)
+        return await self._http.synthesis(params, self.data)
