@@ -3,6 +3,7 @@
 from typing import Optional
 
 from .http import HTTPClient
+from .audio_query import AudioQuery
 
 
 class Client:
@@ -20,7 +21,25 @@ class Client:
 
     async def create_audio_query(
         self, text: str, speaker: int, *, core_version: Optional[str] = None
-    ):
+    ) -> AudioQuery:
+        """
+        Create audio query
+
+        Parameters
+        ----------
+        text: str
+            Voice text
+        speaker: int
+            speaker type
+        core_version: Optional[str]
+            voicevox_core version
+
+        Returns
+        -------
+        audio_query: AudioQuery
+            Audio query
+        """
         params = {"text": text, "speaker": speaker}
         if core_version:
             params["core_version"] = core_version
+        await self.http.create_audio_query(params)
