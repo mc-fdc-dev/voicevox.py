@@ -16,6 +16,12 @@ class Client:
     def __init__(self, base_uri: str = "http://localhost:50021") -> None:
         self.http = HTTPClient(base_uri)
 
+    async def __aenter__(self) -> "Client":
+        return self
+
+    async def __aexit__(self, *args):
+        await self.close()
+
     async def close(self) -> None:
         await self.http.close()
 
