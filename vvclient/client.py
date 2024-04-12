@@ -42,4 +42,4 @@ class Client:
         params = {"text": text, "speaker": speaker}
         if core_version:
             params["core_version"] = core_version
-        await self.http.create_audio_query(params)
+        return AudioQuery(self.http, await self.http.create_audio_query(params))
