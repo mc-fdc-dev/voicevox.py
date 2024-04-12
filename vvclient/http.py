@@ -31,7 +31,7 @@ class HTTPClient:
                 return await response.json()
             else:
                 return await response.read()
-        elif res.status == 404:
+        elif response.status == 404:
             raise NotFoundError("Not found")
         else:
             raise HTTPException(await response.text(), response.status)
