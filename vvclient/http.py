@@ -42,7 +42,7 @@ class HTTPClient:
     async def create_audio_query(
         self, params: Dict[str, Union[str, int]]
     ) -> AudioQueryType:
-        return await self.request(Route("POST", "/audio_query"), json=params)
+        return await self.request(Route("POST", "/audio_query"), params=params)
 
     async def synthesis(
         self, params: Dict[str, Union[str, int]], audio_query: AudioQueryType
