@@ -49,3 +49,7 @@ class Client:
         if core_version:
             params["core_version"] = core_version
         return AudioQuery(self.http, await self.http.create_audio_query(params))
+
+    async def fetch_engine_version(self) -> str:
+        "Show VOICEVOX Engine version"
+        return await self.http.engine_version()
