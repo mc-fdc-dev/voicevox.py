@@ -50,3 +50,6 @@ class HTTPClient:
         return await self.request(
             Route("POST", "/synthesis"), params=params, json=audio_query
         )
+
+    async def engine_version(self) -> str:
+        return await self.request(Route("GET", "/version"))
