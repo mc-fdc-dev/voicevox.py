@@ -53,3 +53,6 @@ class Client:
     async def fetch_engine_version(self) -> str:
         "Show VOICEVOX Engine version"
         return await self.http.engine_version()
+
+    async def fetch_core_versions(self) -> List[str]:
+        return await self.http.core_versions()
