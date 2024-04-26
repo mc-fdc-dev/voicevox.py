@@ -51,8 +51,23 @@ class Client:
         return AudioQuery(self.http, await self.http.create_audio_query(params))
 
     async def fetch_engine_version(self) -> str:
-        "Show VOICEVOX Engine version"
+        """
+        Show VOICEVOX Engine version
+
+        Returns
+        -------
+        engine_version: str
+            VOICEVOX Engine version
+        """
         return await self.http.engine_version()
 
     async def fetch_core_versions(self) -> List[str]:
+        """
+        Get VOICEVOX Core versions"
+
+        Returns
+        -------
+        core_versions: List[str]
+            VOICEVOX Core versions
+        """
         return await self.http.core_versions()
