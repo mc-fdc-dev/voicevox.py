@@ -1,6 +1,6 @@
 # vvclient - http
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, Union, List
 
 from aiohttp import ClientSession
 
@@ -53,3 +53,6 @@ class HTTPClient:
 
     async def engine_version(self) -> str:
         return await self.request(Route("GET", "/version"))
+
+    async def core_versions(self) -> List[str]:
+        return await self.request(Route("GET", "/core_versions"))
