@@ -1,6 +1,6 @@
 # vvclient - client.py
 
-from typing import Optional
+from typing import Optional, List
 
 from .http import HTTPClient
 from .audio_query import AudioQuery
