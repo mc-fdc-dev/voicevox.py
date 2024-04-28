@@ -57,5 +57,5 @@ class HTTPClient:
     async def core_versions(self) -> List[str]:
         return await self.request(Route("GET", "/core_versions"))
 
-    async def initialize_speaker(self, params: Dict[str, Union[str, int]) -> None:
+    async def initialize_speaker(self, params: Dict[str, Union[str, int]]) -> None:
         return await self.request(Route("GET", "/initialize_speaker"), params=params)
