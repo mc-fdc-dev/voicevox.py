@@ -71,3 +71,25 @@ class Client:
             VOICEVOX Core versions
         """
         return await self.http.core_versions()
+
+    async def init_speaker(self, speaker: int, *, skip_reinit: bool = False, core_version: Optional[str] = None) -> None:
+        """
+        Initialize speaker
+
+        Parameters
+        ----------
+        speaker: intn
+            Speaker ID
+        skip_reinit: bool
+            Skip initialized speaker
+        core_version: Optional[str]
+            VOICEVOX Core version
+        """
+        params = {
+            "speaker": speaker
+        }
+        if skip_reinit:
+            params["skip_reinit"] = "true"
+        if core_version:
+            params["core_version"] = core_version
+        await self.http.initialize_speaker(params)

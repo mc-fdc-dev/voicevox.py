@@ -31,6 +31,8 @@ class HTTPClient:
                 return await response.json()
             else:
                 return await response.read()
+        elif response.status == 204:
+            return await response.read()
         elif response.status == 404:
             raise NotFoundError("Not found")
         else:
@@ -56,3 +58,6 @@ class HTTPClient:
 
     async def core_versions(self) -> List[str]:
         return await self.request(Route("GET", "/core_versions"))
+
+    async def initialize_speaker(self, params: Dict[str, Union[str, int]]) -> None:
+        return await self.request(Route("POST", "/initialize_speaker"), params=params)
