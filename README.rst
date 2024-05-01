@@ -7,6 +7,8 @@ voicevox client for python.
 
 Unoffical API wrapper that you can use voicevox easy!
 
+I used discord.py as a reference.
+
 Requirements
 ------------
 
