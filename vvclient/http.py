@@ -61,3 +61,6 @@ class HTTPClient:
 
     async def initialize_speaker(self, params: Dict[str, Union[str, int]]) -> None:
         return await self.request(Route("POST", "/initialize_speaker"), params=params)
+
+    async def is_initialized_speaker(self, params: Dict[str, Union[str, int]) -> bool:
+        return await self.request(Route("GET", "/is_initialized_speaker"), params=params)
