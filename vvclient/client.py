@@ -93,3 +93,11 @@ class Client:
         if core_version:
             params["core_version"] = core_version
         await self.http.initialize_speaker(params)
+
+    async def is_inited_speaker(self, speaker: int, *, core_version: Optional[str] = None) -> bool:
+        params = {
+            "speaker": speaker
+        }
+        if core_version:
+            params["core_version"] = core_version
+        return await self.http.is_initialized_speaker(params)
